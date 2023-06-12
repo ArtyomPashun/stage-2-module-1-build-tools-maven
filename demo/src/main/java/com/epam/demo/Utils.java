@@ -4,6 +4,11 @@ import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-       //magic happens here
+        for (String arg : args) {
+            if (!com.epam.utils.StringUtils.isPositiveNumber(arg)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

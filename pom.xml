@@ -15,6 +15,7 @@
 
     <properties>
         <junit.version>5.8.1</junit.version>
+        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -29,7 +30,17 @@
     <build>
         <plugins>
             <plugin>
-                <!-- something should be here-->
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
